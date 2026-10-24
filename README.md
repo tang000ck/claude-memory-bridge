@@ -23,6 +23,18 @@ Most "memory sync" tools call a model on a schedule to summarize and re-upload. 
 
 Nothing is duplicated into claude.ai's own memory panel (that surface has no write API), and the bridge content is **not** held in claude.ai's standing context — it is fetched only when relevant.
 
+## The three writers
+
+The file is written by three layers, deliberately:
+
+| Layer | Trigger | Cost | Quality |
+|---|---|---|---|
+| claude.ai + Claude Code **preferences** (standing instructions) | the model judges a piece of work is finished | a few hundred output tokens, once per finished task | meaningful: conclusions, decisions, artifact paths |
+| `Stop` hook | every turn, throttled to 30 min | **0** | a floor: filenames and timestamps |
+| `mem add` / `mem log` | you | 0 | whatever you type |
+
+Preferences are what make the memory *useful*; the hook is what guarantees it is *written at all*, because models are unreliable about noticing that a session is ending. Ready-to-paste rule text for both sides: [docs/PREFERENCES.md](docs/PREFERENCES.md).
+
 ## Requirements
 
 - Windows with PowerShell 7 (`pwsh`), Node.js 18+
