@@ -1,3 +1,5 @@
+**English** · [中文](README.zh-CN.md)
+
 # claude-memory-bridge
 
 Share one memory between **claude.ai** (web/app) and **Claude Code** (terminal/desktop) — bidirectional, on demand, and with **zero model calls** in the sync path.
