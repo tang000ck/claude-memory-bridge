@@ -1,0 +1,10 @@
+token.txt
+memory.md
+config.json
+access.log
+hook.log
+server.log
+server.err.log
+.last-code-log
+*.tmp
+.DS_Store

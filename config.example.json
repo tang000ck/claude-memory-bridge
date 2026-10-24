@@ -1,0 +1,4 @@
+{
+  "_comment": "scanDirs: 目录列表，Stop hook 会记录这些目录里最近改动的代码/文档文件。支持 %ENVVAR% 展开。留空则只记录 git 改动。",
+  "scanDirs": []
+}
